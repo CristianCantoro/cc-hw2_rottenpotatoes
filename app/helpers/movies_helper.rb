@@ -11,4 +11,13 @@ module MoviesHelper
       return ''
     end
   end
+
+  def other_params()
+     if params[:ratings]
+       ratings = params[:ratings]
+       Hash[ratings.map { |k, v| ["ratings[#{k}]",v] }]
+     else
+       return Hash.new()
+     end
+  end
 end
