@@ -20,4 +20,12 @@ module MoviesHelper
        return Hash.new()
      end
   end
+  
+  def checked?(rating)
+     if params[:ratings]
+       ratings = params[:ratings].keys
+       return ratings.include?(rating)
+     end
+  end
+  
 end
